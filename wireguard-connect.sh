@@ -14,11 +14,11 @@ PEER_ENDPOINT=${PEER_ENDPOINT}
 cat > github.conf <<EOT
 [Interface]
 PrivateKey = ${INTERFACE_PRIVATE_KEY}
-Address = ${INTERFACE_ADDRESS}/24
+Address = ${INTERFACE_ADDRESS}
 [Peer]
 PublicKey = ${PEER_PUBLIC_KEY}
 Endpoint = ${PEER_ENDPOINT}
-AllowedIPs = ${PEER_ALLOWED_IPS}/32
+AllowedIPs = ${PEER_ALLOWED_IPS}
 PersistentKeepalive = 20
 EOT
 
