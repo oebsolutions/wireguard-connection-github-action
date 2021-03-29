@@ -1,1 +1,1 @@
-#WireGuard connection GitHub action
+# WireGuard connection GitHub action
