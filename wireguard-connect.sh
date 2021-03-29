@@ -30,3 +30,5 @@ sudo cp github.conf /etc/wireguard
 
 # Bring up tunnel, abort on failure
 sudo wg-quick up github || exit 1
+
+echo "<<<=== Connect to WireGuard GitHub Action ===>>>"
