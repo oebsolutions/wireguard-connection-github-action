@@ -1,0 +1,32 @@
+name: 'Connect to WireGuard'
+description: 'Connect to your WireGuard VPN on GitHub action flow'
+branding:
+  icon: 'anchor'
+  color: 'gray-dark'
+inputs:
+  interface_private_key:
+    description: 'WireGuard private key'
+    required: true
+  interface_address:
+    description: 'Interface IP'
+    required: true
+  peer_public_key:
+    description: 'Public key of peer'
+    required: false
+  peer_allowed_ips:
+    description: 'Allowed IPs to use WireGuard connection'
+    required: false
+  peer_endpoint:
+    description: 'WireGuard endpoint'
+    required: false
+runs:
+  using: "composite"
+  steps:
+    - run: ${{ github.action_path }}/wireguard-connect.sh
+      shell: bash
+      env:
+        INTERFACE_PRIVATE_KEY: ${{ inputs.interface_private_key }}
+        INTERFACE_ADDRESS: ${{ inputs.interface_address }}
+        PEER_PUBLIC_KEY: ${{ inputs.peer_public_key }}
+        PEER_ALLOWED_IPS: ${{ inputs.peer_allowed_ips }}
+        PEER_ENDPOINT: ${{ inputs.peer_endpoint }}
