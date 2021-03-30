@@ -24,7 +24,7 @@ EOT
 
 # Dependencies
 sudo DEBIAN_FRONTEND=noninteractive apt-get -qq update
-sudo DEBIAN_FRONTEND=noninteractive apt-get -yqq install wireguard-dkms net-tools
+sudo DEBIAN_FRONTEND=noninteractive apt-get -yqq install wireguard-dkms
 
 sudo cp github.conf /etc/wireguard
 
